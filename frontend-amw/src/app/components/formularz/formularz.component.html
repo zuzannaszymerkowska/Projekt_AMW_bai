@@ -1,0 +1,25 @@
+<div class="card shadow mt-4 w-75 mx-auto">
+  <div class="card-header bg-success text-white">
+    <h4 class="mb-0">Dodaj nowe wydarzenie AMW</h4>
+  </div>
+  <div class="card-body">
+    <form (ngSubmit)="zapiszWydarzenie()">
+      <div class="mb-3">
+        <label class="form-label fw-bold">Tytuł wydarzenia</label>
+        <input type="text" class="form-control" name="tytul" [(ngModel)]="wydarzenie.tytul" required placeholder="np. Dni Otwarte AMW">
+      </div>
+      <div class="mb-3">
+        <label class="form-label fw-bold">Data wydarzenia</label>
+        <input type="text" class="form-control" name="data" [(ngModel)]="wydarzenie.data" required placeholder="np. 2026-06-15">
+      </div>
+      <div class="mb-4">
+        <label class="form-label fw-bold">Opis</label>
+        <textarea class="form-control" name="opis" rows="4" [(ngModel)]="wydarzenie.opis" required placeholder="Napisz coś więcej..."></textarea>
+      </div>
+      <div class="d-flex justify-content-between">
+        <a routerLink="/" class="btn btn-outline-secondary">Wróć do listy</a>
+        <button type="submit" class="btn btn-success px-4">Zapisz wydarzenie</button>
+      </div>
+    </form>
+  </div>
+</div>

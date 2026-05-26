@@ -1,0 +1,35 @@
+<div class="card shadow mt-4">
+  <div class="card-header bg-dark text-white">
+    <h4 class="mb-0">Nadchodzące wydarzenia w AMW</h4>
+  </div>
+  <div class="card-body">
+    <table class="table table-hover mt-3">
+      <thead class="table-light">
+        <tr>
+          <th>Tytuł</th>
+          <th>Data</th>
+          <th>Opis</th>
+          <th>Akcje</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (wyd of wydarzenia; track $index) {
+          <tr>
+            <td class="fw-bold">{{ wyd.tytul }}</td>
+            <td>{{ wyd.data }}</td>
+            <td>{{ wyd.opis }}</td>
+            <td>
+              <button class="btn btn-sm btn-danger" (click)="usun(wyd.id || wyd._id)">Usuń</button>
+            </td>
+          </tr>
+        } @empty {
+          <tr>
+            <td colspan="4" class="text-center text-muted py-4">
+              Brak wydarzeń. Kliknij "+ Dodaj wydarzenie" w menu.
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
